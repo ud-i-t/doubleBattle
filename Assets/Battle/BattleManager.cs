@@ -7,17 +7,24 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour, IBattleManager
 {
     public GameObject CommandWindow;
+    public BattleMessage MessageWindow;
     public Party Party;
     public Enemy Enemy;
 
     private void OnEnable()
     {
-        CommandWindow.SetActive(true);
+        StartInput();
     }
 
     private void OnDisable()
     {
         
+    }
+
+    private void StartInput()
+    {
+        MessageWindow.Message = "コマンド？";
+        CommandWindow.SetActive(true);
     }
 
     public void TurnStart()
@@ -30,16 +37,19 @@ public class BattleManager : MonoBehaviour, IBattleManager
         CommandWindow.SetActive(false);
 
         Party.actors[1].Action();
+        MessageWindow.Message = "後衛の行動";
 
-        yield return StartCoroutine(Wait(30));
+        yield return StartCoroutine(Wait(60));
 
         Enemy.Action(Party.actors[0]);
-        yield return StartCoroutine(Wait(30));
+        MessageWindow.Message = "敵の行動";
+        yield return StartCoroutine(Wait(60));
 
         Party.actors[0].Reaction(Enemy);
-        yield return StartCoroutine(Wait(30));
+        MessageWindow.Message = "前衛の反撃";
+        yield return StartCoroutine(Wait(60));
 
-        CommandWindow.SetActive(true);
+        StartInput();
         yield return null;
     }
 
