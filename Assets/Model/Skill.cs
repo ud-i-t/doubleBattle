@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill : MonoBehaviour
+public class Skill
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Use(IBattler user, IBattler target, IMessage message)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        message.Message = $"{user.Name}の攻撃！ {target.Name}に{1}のダメージ";
+        target.HP--;
     }
 }

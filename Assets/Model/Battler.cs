@@ -9,6 +9,7 @@ namespace Assets.Model
 {
     public class Battler : MonoBehaviour, IBattler
     {
+        public string Name { get; protected set; }
         public int MaxHP { get; set; } = 50;
 
         private int _hp;
@@ -27,7 +28,7 @@ namespace Assets.Model
         {
         }
 
-        public virtual void Reaction(IBattler enemy)
+        public virtual void Reaction(IBattler enemy, IMessage message)
         {
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BattleMessage : MonoBehaviour
+public class BattleMessage : MonoBehaviour, IMessage
 {
     public string Message { get; set; }
 

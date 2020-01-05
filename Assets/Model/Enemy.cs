@@ -11,13 +11,14 @@ namespace Assets.Model
     {
         public Enemy()
         {
+            Name = "エネミー";
             MaxHP = 20;
             HP = MaxHP;
         }
 
-        public void Action(IBattler target)
+        public void Action(IBattler target, IMessage message)
         {
-            target.HP--;
+            new Skill().Use(this, target, message);
         }
     }
 }

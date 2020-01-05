@@ -10,17 +10,19 @@ public class Actor : Battler
 
     public Actor()
     {
+        Name = "アクター";
         HP = MaxHP;
         ST = MaxST;
     }
 
-    public void Action(IBattler target)
+    public void Action(IBattler target, IMessage message)
     {
-        target.HP--;
+        new Skill().Use(this, target, message);
     }
 
-    public override void Reaction(IBattler target)
+    public override void Reaction(IBattler target, IMessage message)
     {
+        message.Message = $"{Name}の反撃";
         target.HP--;
     }
 }
