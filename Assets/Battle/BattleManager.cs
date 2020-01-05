@@ -37,7 +37,7 @@ public class BattleManager : MonoBehaviour, IBattleManager
     {
         CommandWindow.SetActive(false);
 
-        Party.actors[1].Skills.First().Use(Party.actors[1], Enemy, MessageWindow);
+        Party.actors[1].Action(Enemy, MessageWindow);
         yield return StartCoroutine(Wait(60));
 
         Enemy.Skills.First().Use(Enemy, Party.actors[0], MessageWindow);

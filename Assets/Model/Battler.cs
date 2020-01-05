@@ -24,7 +24,7 @@ namespace Assets.Model
             }
         }
 
-        public void Start()
+        public void Awake()
         {
             OnStart();
             HP = MaxHP;
@@ -33,10 +33,6 @@ namespace Assets.Model
         protected virtual void OnStart()
         {
 
-        }
-
-        public Battler()
-        {
         }
 
         public virtual void Reaction(IBattler enemy, IMessage message)

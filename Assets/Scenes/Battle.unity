@@ -283,6 +283,7 @@ MonoBehaviour:
   ButtonPrefab: {fileID: 4836359739174417707, guid: acd0898d118e51d49b62ec393d210e87,
     type: 3}
   BattleManager: {fileID: 977301016}
+  Party: {fileID: 1289751271}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

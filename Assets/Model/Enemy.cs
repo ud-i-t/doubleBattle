@@ -21,7 +21,7 @@ namespace Assets.Model
             Name = MasterData.name;
             MaxHP = MasterData.HP;
             HP = MaxHP;
-            Skills = MasterData.Skills.Select(x => new Skill(x));
+            Skills = MasterData.Skills.Select(x => new Skill(x)).ToList();
         }
     }
 }
