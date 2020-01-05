@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e313401efc8c5f649bec36f2edb35bb6, type: 3}
-  m_Name: Rikka
+  m_Script: {fileID: 11500000, guid: fe9a6fc103435ad448d33afce0614c96, type: 3}
+  m_Name: Firebolt
   m_EditorClassIdentifier: 
-  Name: "\u30EA\u30C3\u30AB"
-  HP: 30
-  Skills:
-  - {fileID: 11400000, guid: 9b5549d2d919279478a83010187e0afa, type: 2}
-  Weapon: {fileID: 11400000, guid: 4c290da2fe0c80347abf573e48207a14, type: 2}
+  Name: "\u30D5\u30A1\u30A4\u30A2\u30DC\u30EB\u30C8"
+  Power: 3

@@ -12,6 +12,7 @@ public class Actor : Battler
     public int ST { get; set; }
 
     public IEnumerable<Skill> Skills;
+    public Skill Weapon;
 
     protected override void OnStart()
     {
@@ -20,10 +21,11 @@ public class Actor : Battler
         ST = MaxST;
 
         Skills = MasterData.Skills.Select(x => new Skill(x));
+        Weapon = new Skill(MasterData.Weapon);
     }
 
     public override void Reaction(IBattler target, IMessage message)
     {
-        Skills.First().Use(this, target, message);
+        Weapon.Use(this, target, message);
     }
 }
