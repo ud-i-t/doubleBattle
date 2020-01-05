@@ -9,19 +9,16 @@ namespace Assets.Model
 {
     public class Enemy : Battler
     {
-        public MasterEnemyData MasterData;
+        private MasterEnemyData _masterData;
         public IEnumerable<Skill> Skills;
 
-        public Enemy()
+        public Enemy(MasterEnemyData masterData)
         {
-        }
-
-        protected override void OnStart()
-        {
-            Name = MasterData.name;
-            MaxHP = MasterData.HP;
+            _masterData = masterData;
+            Name = _masterData.name;
+            MaxHP = _masterData.HP;
             HP = MaxHP;
-            Skills = MasterData.Skills.Select(x => new Skill(x)).ToList();
+            Skills = _masterData.Skills.Select(x => new Skill(x)).ToList();
         }
     }
 }

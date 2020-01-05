@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class EnemyViewModel : MonoBehaviour
 {
-    public Enemy Enemy;
+    public Enemy Model;
     public MasterEnemyData MasterData;
 
     public void Awake()
     {
-        Enemy = new Enemy();
+        Model = new Enemy(MasterData);
     }
 }

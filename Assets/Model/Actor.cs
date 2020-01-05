@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Actor : Battler
 {
-    public MasterActorData MasterData;
+    private MasterActorData _masterData;
 
     public int MaxST { get; set; } = 12;
     public int ST { get; set; }
@@ -15,14 +15,16 @@ public class Actor : Battler
     public Skill Weapon;
     public Skill UseSkill { get; internal set; }
 
-    protected override void OnStart()
+    public Actor(MasterActorData masterData)
     {
-        Name = MasterData.Name;
-        MaxHP = MasterData.HP;
+        _masterData = masterData;
+        Name = _masterData.Name;
+        MaxHP = _masterData.HP;
+        HP = MaxHP;
         ST = MaxST;
 
-        Skills = MasterData.Skills.Select(x => new Skill(x)).ToList();
-        Weapon = new Skill(MasterData.Weapon);
+        Skills = _masterData.Skills.Select(x => new Skill(x)).ToList();
+        Weapon = new Skill(_masterData.Weapon);
     }
 
     public void Action(IBattler target, IMessage message)

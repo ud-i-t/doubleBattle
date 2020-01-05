@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 36311856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fdbd7f8b45b0b478b0281429a54b5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2224ecb7aff209d4ca5116c2c92e9688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MasterData: {fileID: 11400000, guid: 29769e41799331040a688615861ffa7b, type: 2}
@@ -572,10 +572,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 762095725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ad2dc0e58b2c3e439d0a370db497dec, type: 3}
+  m_Script: {fileID: 11500000, guid: c421dca77f75acb4499e8a8b4b1d028b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MasterData: {fileID: 11400000, guid: 6673159ea217e664294bdd293e482ca7, type: 2}
+  MasterData: {fileID: 11400000, guid: c32a30aa89e875843be67f0500212406, type: 2}
 --- !u!1 &799571605
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,10 +960,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1324467360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ad2dc0e58b2c3e439d0a370db497dec, type: 3}
+  m_Script: {fileID: 11500000, guid: c421dca77f75acb4499e8a8b4b1d028b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MasterData: {fileID: 11400000, guid: c32a30aa89e875843be67f0500212406, type: 2}
+  MasterData: {fileID: 11400000, guid: 6673159ea217e664294bdd293e482ca7, type: 2}
 --- !u!1 &1436093435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,12 +1240,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 1324467362}
+      objectReference: {fileID: 0}
     - target: {fileID: 2554089487621354951, guid: 850bddfe00934114ba4cc506fad6e3b8,
         type: 3}
       propertyPath: Battler
       value: 
-      objectReference: {fileID: 1324467362}
+      objectReference: {fileID: 762095727}
     - target: {fileID: 2554089486403277168, guid: 850bddfe00934114ba4cc506fad6e3b8,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1355,7 +1355,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 1324467362}
+      objectReference: {fileID: 762095727}
     - target: {fileID: 2554089487348099050, guid: 850bddfe00934114ba4cc506fad6e3b8,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1545,7 +1545,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Battler
       value: 
-      objectReference: {fileID: 1324467362}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064686729271686505, guid: 850bddfe00934114ba4cc506fad6e3b8,
+        type: 3}
+      propertyPath: VM
+      value: 
+      objectReference: {fileID: 762095727}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850bddfe00934114ba4cc506fad6e3b8, type: 3}
 --- !u!1 &1907656254
@@ -1866,7 +1871,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 762095727}
+      objectReference: {fileID: 0}
     - target: {fileID: 2554089487621354951, guid: 850bddfe00934114ba4cc506fad6e3b8,
         type: 3}
       propertyPath: Battler
@@ -2171,6 +2176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Battler
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064686729271686505, guid: 850bddfe00934114ba4cc506fad6e3b8,
+        type: 3}
+      propertyPath: VM
+      value: 
       objectReference: {fileID: 762095727}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850bddfe00934114ba4cc506fad6e3b8, type: 3}
@@ -2430,19 +2440,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4353100560048793626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4353100560048793631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b8e8cbbaf589149bd93d25d5d00076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Battler: {fileID: 36311858}
 --- !u!114 &4353100560048793627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2539,7 +2536,7 @@ GameObject:
   - component: {fileID: 4353100560048793628}
   - component: {fileID: 4353100560048793629}
   - component: {fileID: 4353100560048793627}
-  - component: {fileID: 4353100560048793626}
+  - component: {fileID: 4353100560048793632}
   m_Layer: 5
   m_Name: HP
   m_TagString: Untagged
@@ -2547,6 +2544,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4353100560048793632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353100560048793631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0918927e3475a5e4284fcf43388bebfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Battler: {fileID: 36311858}
 --- !u!222 &4353100560215272601
 CanvasRenderer:
   m_ObjectHideFlags: 0

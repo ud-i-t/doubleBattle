@@ -9,6 +9,6 @@ namespace Assets.Model
 {
     public class Party : MonoBehaviour
     {
-        public Actor[] actors = new Actor[2];
+        public ActorViewModel[] actors = new ActorViewModel[2];
     }
 }

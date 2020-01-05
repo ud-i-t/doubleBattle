@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ActorViewModel : MonoBehaviour
 {
-    public Actor Actor;
+    public Actor Model;
     public MasterActorData MasterData;
 
     public void Awake()
     {
-        Actor = new Actor();
+        Model = new Actor(MasterData);
     }
 }

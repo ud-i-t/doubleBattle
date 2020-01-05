@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Model
 {
-    public class Battler : MonoBehaviour, IBattler
+    public class Battler : IBattler
     {
         public string Name { get; protected set; }
         public int MaxHP { get; set; } = 50;
@@ -22,12 +22,6 @@ namespace Assets.Model
                 if (_hp < 0) _hp = 0;
                 if (_hp > MaxHP) _hp = MaxHP;
             }
-        }
-
-        public void Awake()
-        {
-            OnStart();
-            HP = MaxHP;
         }
 
         protected virtual void OnStart()

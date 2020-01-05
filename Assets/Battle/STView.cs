@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class STView : MonoBehaviour
 {
-    public Actor Actor;
+    public ActorViewModel Actor;
 
     private Text _current;
     private Text _max;
@@ -20,7 +20,7 @@ public class STView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _current.text = Actor.ST.ToString();
-        _max.text = Actor.MaxST.ToString();
+        _current.text = Actor.Model.ST.ToString();
+        _max.text = Actor.Model.MaxST.ToString();
     }
 }

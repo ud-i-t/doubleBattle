@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HPView : MonoBehaviour
+public class EnemyHPView : MonoBehaviour
 {
-    public ActorViewModel Battler;
+    public EnemyViewModel Battler;
 
     private Text _hp;
     private Text _mhp;

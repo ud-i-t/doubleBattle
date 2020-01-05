@@ -17,13 +17,13 @@ public class CreateCommandButton : MonoBehaviour
     {
         GameObject button;
         CommandButton script;
-        foreach(var skill in Party.actors[1].Skills)
+        foreach(var skill in Party.actors[1].Model.Skills)
         {
             button = Instantiate(ButtonPrefab, transform);
             script = button.GetComponent<CommandButton>();
             script.Action = () =>
             {
-                Party.actors[1].UseSkill = skill;
+                Party.actors[1].Model.UseSkill = skill;
                 BattleManager.TurnStart();
             };
 

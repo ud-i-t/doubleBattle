@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NameView : MonoBehaviour
+public class EnemyNameView : MonoBehaviour
 {
-    public ActorViewModel VM;
+    public EnemyViewModel VM;
     private Text _label;
 
     private void Start()
