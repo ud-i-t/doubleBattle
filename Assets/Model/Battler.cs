@@ -24,6 +24,17 @@ namespace Assets.Model
             }
         }
 
+        public void Start()
+        {
+            OnStart();
+            HP = MaxHP;
+        }
+
+        protected virtual void OnStart()
+        {
+
+        }
+
         public Battler()
         {
         }

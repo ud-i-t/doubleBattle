@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class Actor : Battler
 {
+    public MasterActorData MasterData;
+
     public int MaxST { get; set; } = 12;
     public int ST { get; set; }
 
-    public Actor()
+    protected override void OnStart()
     {
-        Name = "アクター";
-        HP = MaxHP;
+        Name = MasterData.Name;
+        MaxHP = MasterData.HP;
         ST = MaxST;
     }
 
@@ -22,7 +24,7 @@ public class Actor : Battler
 
     public override void Reaction(IBattler target, IMessage message)
     {
-        message.Message = $"{Name}の反撃";
+        message.Message = $"{Name}の反撃！{target.Name}に{1}のダメージ";
         target.HP--;
     }
 }
