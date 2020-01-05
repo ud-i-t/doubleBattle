@@ -17,7 +17,7 @@ public class CreateCommandButton : MonoBehaviour
     {
         GameObject button;
         CommandButton script;
-        foreach(var skill in Party.actors[1].Model.Skills)
+        foreach (var skill in Party.actors[1].Model.Skills)
         {
             button = Instantiate(ButtonPrefab, transform);
             script = button.GetComponent<CommandButton>();
@@ -39,6 +39,11 @@ public class CreateCommandButton : MonoBehaviour
         button = Instantiate(ButtonPrefab, transform);
         button.transform.Find("Name").GetComponent<Text>().text = "交代";
         button.transform.Find("Value").GetComponent<Text>().text = "∞";
+        script = button.GetComponent<CommandButton>();
+        script.Action = () =>
+        {
+            Party.Switch();
+        };
         _buttons.Add(button);
     }
 

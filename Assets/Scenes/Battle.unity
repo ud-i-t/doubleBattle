@@ -1245,7 +1245,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Battler
       value: 
-      objectReference: {fileID: 762095727}
+      objectReference: {fileID: 1324467362}
     - target: {fileID: 2554089486403277168, guid: 850bddfe00934114ba4cc506fad6e3b8,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1355,7 +1355,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 762095727}
+      objectReference: {fileID: 1324467362}
     - target: {fileID: 2554089487348099050, guid: 850bddfe00934114ba4cc506fad6e3b8,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1550,7 +1550,7 @@ PrefabInstance:
         type: 3}
       propertyPath: VM
       value: 
-      objectReference: {fileID: 762095727}
+      objectReference: {fileID: 1324467362}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850bddfe00934114ba4cc506fad6e3b8, type: 3}
 --- !u!1 &1907656254
