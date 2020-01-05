@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CreateCommandButton : MonoBehaviour
 {
     public GameObject ButtonPrefab;
+    public BattleManager BattleManager;
 
     private IList<GameObject> _buttons = new List<GameObject>();
 
@@ -27,11 +28,13 @@ public class CreateCommandButton : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             button = Instantiate(ButtonPrefab, transform);
+            button.GetComponent<CommandButton>().BattleManager = BattleManager;
             button.transform.Find("Name").GetComponent<Text>().text = $"スキル{i}";
             _buttons.Add(button);
         }
 
         button = Instantiate(ButtonPrefab, transform);
+        button.GetComponent<CommandButton>().BattleManager = BattleManager;
         button.transform.Find("Name").GetComponent<Text>().text = "交代";
         button.transform.Find("Value").GetComponent<Text>().text = "∞";
         _buttons.Add(button);
