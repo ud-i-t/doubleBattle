@@ -35,6 +35,12 @@ public class CreateCommandButton : MonoBehaviour
 
         button = Instantiate(ButtonPrefab, transform);
         button.GetComponent<CommandButton>().BattleManager = BattleManager;
+        button.transform.Find("Name").GetComponent<Text>().text = "装備変更";
+        button.transform.Find("Value").GetComponent<Text>().text = "∞";
+        _buttons.Add(button);
+
+        button = Instantiate(ButtonPrefab, transform);
+        button.GetComponent<CommandButton>().BattleManager = BattleManager;
         button.transform.Find("Name").GetComponent<Text>().text = "交代";
         button.transform.Find("Value").GetComponent<Text>().text = "∞";
         _buttons.Add(button);
