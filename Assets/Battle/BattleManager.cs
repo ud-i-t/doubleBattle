@@ -36,7 +36,7 @@ public class BattleManager : MonoBehaviour, IBattleManager
     {
         CommandWindow.SetActive(false);
 
-        Party.actors[1].Action();
+        Party.actors[1].Action(Enemy);
         MessageWindow.Message = "後衛の行動";
 
         yield return StartCoroutine(Wait(60));

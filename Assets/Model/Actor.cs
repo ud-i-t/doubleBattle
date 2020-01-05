@@ -1,39 +1,26 @@
-﻿using System.Collections;
+﻿using Assets.Model;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor : MonoBehaviour, IBattler
+public class Actor : Battler
 {
-    public int MaxHP { get; set; } = 50;
-
-    private int _hp;
-    public int HP
-    {
-        get { return _hp; }
-        set
-        {
-            _hp = value;
-            if (_hp < 0) _hp = 0;
-            if (_hp > MaxHP) _hp = MaxHP;
-        }
-    }
-
     public int MaxST { get; set; } = 12;
     public int ST { get; set; }
-
-    public void Action()
-    {
-        HP--;
-    }
-
-    public void Reaction(IBattler target)
-    {
-        target.HP--;
-    }
 
     public Actor()
     {
         HP = MaxHP;
         ST = MaxST;
+    }
+
+    public void Action(IBattler target)
+    {
+        target.HP--;
+    }
+
+    public override void Reaction(IBattler target)
+    {
+        target.HP--;
     }
 }

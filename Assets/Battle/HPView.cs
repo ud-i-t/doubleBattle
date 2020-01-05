@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Assets.Model;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HPView : MonoBehaviour
 {
-    public Actor Actor;
+    public Battler Battler;
 
     private Text _hp;
     private Text _mhp;
@@ -20,7 +21,7 @@ public class HPView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _hp.text = Actor.HP.ToString();
-        _mhp.text = Actor.MaxHP.ToString();
+        _hp.text = Battler.HP.ToString();
+        _mhp.text = Battler.MaxHP.ToString();
     }
 }

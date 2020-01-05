@@ -7,30 +7,17 @@ using UnityEngine;
 
 namespace Assets.Model
 {
-    public class Enemy : MonoBehaviour, IBattler
+    public class Enemy : Battler
     {
-        public int MaxHP { get; set; } = 20;
-
-        private int _hp;
-        public int HP
+        public Enemy()
         {
-            get { return _hp; }
-            set
-            {
-                _hp = value;
-                if (_hp < 0) _hp = 0;
-                if (_hp > MaxHP) _hp = MaxHP;
-            }
+            MaxHP = 20;
+            HP = MaxHP;
         }
 
         public void Action(IBattler target)
         {
             target.HP--;
-        }
-
-        public void Reaction(IBattler target)
-        {
-
         }
     }
 }
