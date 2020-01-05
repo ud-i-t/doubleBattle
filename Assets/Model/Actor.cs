@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor : MonoBehaviour
+public class Actor : MonoBehaviour, IBattler
 {
     public int MaxHP { get; set; } = 50;
 
@@ -24,6 +24,11 @@ public class Actor : MonoBehaviour
     public void Action()
     {
         HP--;
+    }
+
+    public void Reaction(IBattler target)
+    {
+        target.HP--;
     }
 
     public Actor()

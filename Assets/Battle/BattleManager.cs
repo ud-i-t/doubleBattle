@@ -8,6 +8,7 @@ public class BattleManager : MonoBehaviour, IBattleManager
 {
     public GameObject CommandWindow;
     public Party Party;
+    public Enemy Enemy;
 
     private void OnEnable()
     {
@@ -30,7 +31,13 @@ public class BattleManager : MonoBehaviour, IBattleManager
 
         Party.actors[1].Action();
 
-        yield return StartCoroutine(Wait(60));
+        yield return StartCoroutine(Wait(30));
+
+        Enemy.Action(Party.actors[0]);
+        yield return StartCoroutine(Wait(30));
+
+        Party.actors[0].Reaction(Enemy);
+        yield return StartCoroutine(Wait(30));
 
         CommandWindow.SetActive(true);
         yield return null;

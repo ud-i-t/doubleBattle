@@ -6,4 +6,6 @@ public interface IBattler
 {
     int MaxHP { get; set; }
     int HP { get; set; }
+
+    void Reaction(IBattler enemy);
 }
