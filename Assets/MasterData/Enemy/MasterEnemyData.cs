@@ -5,7 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu]
 [Serializable]
-public class MasterActorData : ScriptableObject
+public class MasterEnemyData : ScriptableObject
 {
     public string Name;
     public int HP;

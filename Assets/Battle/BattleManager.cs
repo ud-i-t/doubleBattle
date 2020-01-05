@@ -2,6 +2,7 @@
 using Assets.Model;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BattleManager : MonoBehaviour, IBattleManager
@@ -18,7 +19,7 @@ public class BattleManager : MonoBehaviour, IBattleManager
 
     private void OnDisable()
     {
-        
+
     }
 
     private void StartInput()
@@ -36,10 +37,10 @@ public class BattleManager : MonoBehaviour, IBattleManager
     {
         CommandWindow.SetActive(false);
 
-        Party.actors[1].Action(Enemy, MessageWindow);
+        Party.actors[1].Skills.First().Use(Party.actors[1], Enemy, MessageWindow);
         yield return StartCoroutine(Wait(60));
 
-        Enemy.Action(Party.actors[0], MessageWindow);
+        Enemy.Skills.First().Use(Enemy, Party.actors[0], MessageWindow);
         yield return StartCoroutine(Wait(60));
 
         Party.actors[0].Reaction(Enemy, MessageWindow);
@@ -51,7 +52,7 @@ public class BattleManager : MonoBehaviour, IBattleManager
 
     private IEnumerator Wait(int frame)
     {
-        for(int i = 0; i < frame; i++)
+        for (int i = 0; i < frame; i++)
         {
             yield return null;
         }

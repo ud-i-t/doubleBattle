@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u30A2\u30F3\u30D0\u30FC"
   HP: 35
+  Skills:
+  - {fileID: 11400000, guid: 4c290da2fe0c80347abf573e48207a14, type: 2}

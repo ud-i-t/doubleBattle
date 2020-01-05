@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Skill
 {
+    private MasterSkillData _masterData;
+
+    public Skill(MasterSkillData masterData)
+    {
+        _masterData = masterData;
+    }
+
     public void Use(IBattler user, IBattler target, IMessage message)
     {
-        message.Message = $"{user.Name}の攻撃！ {target.Name}に{1}のダメージ";
-        target.HP--;
+        message.Message = $"{user.Name}の攻撃！ {target.Name}に{_masterData.Power}のダメージ";
+        target.HP -= _masterData.Power;
     }
 }

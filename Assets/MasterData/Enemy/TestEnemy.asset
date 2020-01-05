@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e313401efc8c5f649bec36f2edb35bb6, type: 3}
-  m_Name: Rikka
+  m_Script: {fileID: 11500000, guid: f048654fa43a84947902a32e3e6cb9ce, type: 3}
+  m_Name: TestEnemy
   m_EditorClassIdentifier: 
-  Name: "\u30EA\u30C3\u30AB"
-  HP: 30
+  Name: "\u30D5\u30A7\u30A2\u30EA\u30FC"
+  HP: 21
   Skills:
   - {fileID: 11400000, guid: 4c290da2fe0c80347abf573e48207a14, type: 2}

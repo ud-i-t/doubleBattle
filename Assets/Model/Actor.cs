@@ -1,6 +1,7 @@
 ﻿using Assets.Model;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Actor : Battler
@@ -10,21 +11,19 @@ public class Actor : Battler
     public int MaxST { get; set; } = 12;
     public int ST { get; set; }
 
+    public IEnumerable<Skill> Skills;
+
     protected override void OnStart()
     {
         Name = MasterData.Name;
         MaxHP = MasterData.HP;
         ST = MaxST;
-    }
 
-    public void Action(IBattler target, IMessage message)
-    {
-        new Skill().Use(this, target, message);
+        Skills = MasterData.Skills.Select(x => new Skill(x));
     }
 
     public override void Reaction(IBattler target, IMessage message)
     {
-        message.Message = $"{Name}の反撃！{target.Name}に{1}のダメージ";
-        target.HP--;
+        Skills.First().Use(this, target, message);
     }
 }

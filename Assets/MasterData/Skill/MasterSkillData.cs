@@ -5,10 +5,8 @@ using UnityEngine;
 
 [CreateAssetMenu]
 [Serializable]
-public class MasterActorData : ScriptableObject
+public class MasterSkillData : ScriptableObject
 {
     public string Name;
-    public int HP;
-
-    public List<MasterSkillData> Skills;
+    public int Power;
 }
