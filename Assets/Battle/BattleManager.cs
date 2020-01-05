@@ -1,4 +1,5 @@
 ﻿using Assets.Battle;
+using Assets.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour, IBattleManager
 {
     public GameObject CommandWindow;
+    public Party Party;
 
     private void OnEnable()
     {
@@ -25,6 +27,8 @@ public class BattleManager : MonoBehaviour, IBattleManager
     public IEnumerator TurnAction()
     {
         CommandWindow.SetActive(false);
+
+        Party.actors[1].Action();
 
         yield return StartCoroutine(Wait(60));
 
