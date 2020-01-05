@@ -9,6 +9,7 @@ public class MasterActorData : ScriptableObject
 {
     public string Name;
     public int HP;
+    public int ST;
 
     public List<MasterSkillData> Skills;
     public MasterSkillData Weapon;

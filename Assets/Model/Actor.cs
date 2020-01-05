@@ -21,6 +21,8 @@ public class Actor : Battler
         Name = _masterData.Name;
         MaxHP = _masterData.HP;
         HP = MaxHP;
+
+        MaxST = _masterData.ST;
         ST = MaxST;
 
         Skills = _masterData.Skills.Select(x => new Skill(x)).ToList();
