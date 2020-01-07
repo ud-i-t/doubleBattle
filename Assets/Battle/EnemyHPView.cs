@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class EnemyHPView : MonoBehaviour
 {
-    public EnemyViewModel Battler;
-
     private Text _hp;
     private Text _mhp;
 
@@ -21,7 +19,8 @@ public class EnemyHPView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _hp.text = Battler.Model.HP.ToString();
-        _mhp.text = Battler.Model.MaxHP.ToString();
+        var enemy = Repository.Get<Enemy>();
+        _hp.text = enemy.HP.ToString();
+        _mhp.text = enemy.MaxHP.ToString();
     }
 }

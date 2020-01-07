@@ -8,22 +8,22 @@ public class CreateCommandButton : MonoBehaviour
 {
     public GameObject ButtonPrefab;
     public BattleManager BattleManager;
-    public Party Party;
 
     private IList<GameObject> _buttons = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
+        var pt = Repository.Get<Party>();
         GameObject button;
         CommandButton script;
-        foreach (var skill in Party.actors[1].Model.Skills)
+        foreach (var skill in pt.Actors[1].Skills)
         {
             button = Instantiate(ButtonPrefab, transform);
             script = button.GetComponent<CommandButton>();
             script.Action = () =>
             {
-                Party.actors[1].Model.UseSkill = skill;
+                pt.Actors[1].UseSkill = skill;
                 BattleManager.TurnStart();
             };
 
@@ -42,7 +42,7 @@ public class CreateCommandButton : MonoBehaviour
         script = button.GetComponent<CommandButton>();
         script.Action = () =>
         {
-            Party.Switch();
+            pt.Switch();
         };
         _buttons.Add(button);
     }

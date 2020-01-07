@@ -9,13 +9,13 @@ namespace Assets.Model
 {
     public class Party : MonoBehaviour
     {
-        public ActorViewModel[] actors = new ActorViewModel[2];
+        public Actor[] Actors = new Actor[2];
 
         public void Switch()
         {
-            var model = actors[0].Model;
-            actors[0].Model = actors[1].Model;
-            actors[1].Model = model;
+            var model = Actors[0];
+            Actors[0] = Actors[1];
+            Actors[1] = model;
         }
     }
 }

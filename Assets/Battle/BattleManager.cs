@@ -10,10 +10,12 @@ public class BattleManager : MonoBehaviour, IBattleManager
     public GameObject CommandWindow;
     public BattleMessage MessageWindow;
     public Party Party;
-    public EnemyViewModel Enemy;
+    public Enemy Enemy;
 
     private void OnEnable()
     {
+        Party = Repository.Get<Party>();
+        Enemy = Repository.Get<Enemy>();
         StartInput();
     }
 
@@ -37,13 +39,13 @@ public class BattleManager : MonoBehaviour, IBattleManager
     {
         CommandWindow.SetActive(false);
 
-        Party.actors[1].Model.Action(Enemy.Model, MessageWindow);
+        Party.Actors[1].Action(Enemy, MessageWindow);
         yield return StartCoroutine(Wait(60));
 
-        Enemy.Model.Skills.First().Use(Enemy.Model, Party.actors[0].Model, MessageWindow);
+        Enemy.Skills.First().Use(Enemy, Party.Actors[0], MessageWindow);
         yield return StartCoroutine(Wait(60));
 
-        Party.actors[0].Model.Reaction(Enemy.Model, MessageWindow);
+        Party.Actors[0].Reaction(Enemy, MessageWindow);
         yield return StartCoroutine(Wait(60));
 
         StartInput();

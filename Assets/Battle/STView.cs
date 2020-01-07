@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Assets.Model;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class STView : MonoBehaviour
 {
-    public ActorViewModel Actor;
+    public int Number;
 
     private Text _current;
     private Text _max;
@@ -20,7 +21,8 @@ public class STView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _current.text = Actor.Model.ST.ToString();
-        _max.text = Actor.Model.MaxST.ToString();
+        var pt = Repository.Get<Party>();
+        _current.text = pt.Actors[Number].ST.ToString();
+        _max.text = pt.Actors[Number].MaxST.ToString();
     }
 }

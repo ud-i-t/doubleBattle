@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HPView : MonoBehaviour
 {
-    public ActorViewModel Battler;
+    public int Number;
 
     private Text _hp;
     private Text _mhp;
@@ -21,7 +21,8 @@ public class HPView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _hp.text = Battler.Model.HP.ToString();
-        _mhp.text = Battler.Model.MaxHP.ToString();
+        var pt = Repository.Get<Party>();
+        _hp.text = pt.Actors[Number].HP.ToString();
+        _mhp.text = pt.Actors[Number].MaxHP.ToString();
     }
 }

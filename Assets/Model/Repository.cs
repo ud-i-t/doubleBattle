@@ -12,6 +12,7 @@ public class Repository
     }
 
     public static void Set<T>(T obj)
+        where T : class
     {
         _keyValuePairs.Add(typeof(T), obj);
     }
