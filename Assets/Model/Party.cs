@@ -11,6 +11,15 @@ namespace Assets.Model
     {
         public Actor[] Actors = new Actor[2];
 
+        internal void Heal()
+        {
+            foreach(var a in Actors)
+            {
+                a.HP = a.MaxHP;
+                a.ST = a.MaxST;
+            }
+        }
+
         public bool IsDead => Actors.Count(x => x.HP <= 0) > 0;
 
         public void Switch()
