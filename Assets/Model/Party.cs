@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Model
 {
-    public class Party : MonoBehaviour
+    public class Party
     {
         public Actor[] Actors = new Actor[2];
 
