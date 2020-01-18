@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleButton : MonoBehaviour
+public class GoButton : MonoBehaviour
 {
     public void SceneChange()
     {
-        SceneManager.LoadScene("Dungeon");
+        SceneManager.LoadScene("Battle");
     }
 }
