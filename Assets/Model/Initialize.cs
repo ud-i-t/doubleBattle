@@ -13,6 +13,7 @@ public class Initialize : MonoBehaviour
     void Awake()
     {
         Repository.Set(new Global());
+        Repository.Set(new Warehouse());
 
         var pt = new Party();
         pt.Actors[0] = new Actor(Actor1);
