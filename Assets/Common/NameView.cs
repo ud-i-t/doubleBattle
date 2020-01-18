@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class NameView : MonoBehaviour
 {
-    public ActorViewModel VM;
+    public int Number;
     private Text _label;
 
     private void Start()
@@ -16,6 +16,7 @@ public class NameView : MonoBehaviour
 
     private void Update()
     {
-        _label.text = VM.Model.Name;
+        var pt = Repository.Get<Party>();
+        _label.text = pt.Actors[Number].Name;
     }
 }
