@@ -7,6 +7,7 @@ public class Skill
     private MasterSkillData _masterData;
 
     public string Name => _masterData.Name;
+    public int Power => _masterData.Power;
 
     public Skill(MasterSkillData masterData)
     {
