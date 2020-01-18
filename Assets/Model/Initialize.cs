@@ -12,6 +12,8 @@ public class Initialize : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Repository.Set(new Global());
+
         var pt = new Party();
         pt.Actors[0] = new Actor(Actor1);
         pt.Actors[1] = new Actor(Actor2);

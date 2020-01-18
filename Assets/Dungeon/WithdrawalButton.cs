@@ -8,5 +8,6 @@ public class WithdrawalButton : MonoBehaviour
     public void Execute()
     {
         Repository.Get<Party>().Heal();
+        Repository.Get<Global>().Day++;
     }
 }
