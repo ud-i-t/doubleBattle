@@ -11,6 +11,8 @@ namespace Assets.Model
     {
         public Actor[] Actors = new Actor[2];
 
+        public bool IsDead => Actors.Count(x => x.HP <= 0) > 0;
+
         public void Switch()
         {
             var model = Actors[0];

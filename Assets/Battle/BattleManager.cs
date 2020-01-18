@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour, IBattleManager
 {
@@ -11,6 +12,8 @@ public class BattleManager : MonoBehaviour, IBattleManager
     public BattleMessage MessageWindow;
     public Party Party;
     public Enemy Enemy;
+
+    private bool _isBattelEnd => Party.IsDead || Enemy.HP <= 0;
 
     private void OnEnable()
     {
@@ -41,12 +44,25 @@ public class BattleManager : MonoBehaviour, IBattleManager
 
         Party.Actors[1].Action(Enemy, MessageWindow);
         yield return StartCoroutine(Wait(60));
+        if (_isBattelEnd) {
+            BattleEnd();
+            yield break;
+        }
 
         Enemy.Skills.First().Use(Enemy, Party.Actors[0], MessageWindow);
         yield return StartCoroutine(Wait(60));
+        if (_isBattelEnd) {
+            BattleEnd();
+            yield break;
+        }
 
         Party.Actors[0].Reaction(Enemy, MessageWindow);
         yield return StartCoroutine(Wait(60));
+        if (_isBattelEnd) {
+            BattleEnd();
+            yield break;
+
+        }
 
         StartInput();
         yield return null;
@@ -58,5 +74,10 @@ public class BattleManager : MonoBehaviour, IBattleManager
         {
             yield return null;
         }
+    }
+
+    private void BattleEnd()
+    {
+        SceneManager.LoadScene("Dungeon");
     }
 }
