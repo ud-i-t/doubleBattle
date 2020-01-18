@@ -18,5 +18,5 @@ MonoBehaviour:
   Skills:
   - {fileID: 11400000, guid: 12b9bf4aa6425f54eaa815e5770d84ce, type: 2}
   - {fileID: 11400000, guid: 9b5549d2d919279478a83010187e0afa, type: 2}
-  Weapon: {fileID: 11400000, guid: 4c290da2fe0c80347abf573e48207a14, type: 2}
+  Weapon: {fileID: 11400000, guid: dbb3bf1d18230bb40a2f31883d2cd3c2, type: 2}
   SubWeapon: {fileID: 11400000, guid: 9b5549d2d919279478a83010187e0afa, type: 2}
