@@ -13,4 +13,5 @@ public class MasterActorData : ScriptableObject
 
     public List<MasterSkillData> Skills;
     public MasterSkillData Weapon;
+    public MasterSkillData SubWeapon;
 }

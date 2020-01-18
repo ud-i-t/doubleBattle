@@ -34,6 +34,12 @@ public class CreateCommandButton : MonoBehaviour
         button = Instantiate(ButtonPrefab, transform);
         button.transform.Find("Name").GetComponent<Text>().text = "装備変更";
         button.transform.Find("Value").GetComponent<Text>().text = "∞";
+        script = button.GetComponent<CommandButton>();
+        script.Action = () =>
+        {
+            pt.Actors[1].SwitchWeapon();
+        };
+        script.Enable = () => pt.Actors[1].AllowSwitchWeapon;
         _buttons.Add(button);
 
         button = Instantiate(ButtonPrefab, transform);

@@ -13,7 +13,10 @@ public class Actor : Battler
 
     public IEnumerable<Skill> Skills;
     public Skill Weapon;
+    public Skill SubWeapon;
     public Skill UseSkill { get; internal set; }
+
+    public bool AllowSwitchWeapon => SubWeapon != null;
 
     public Actor(MasterActorData masterData)
     {
@@ -27,6 +30,7 @@ public class Actor : Battler
 
         Skills = _masterData.Skills.Select(x => new Skill(x)).ToList();
         Weapon = new Skill(_masterData.Weapon);
+        SubWeapon = new Skill(_masterData.SubWeapon);
     }
 
     public void Action(IBattler target, IMessage message)
@@ -37,5 +41,12 @@ public class Actor : Battler
     public override void Reaction(IBattler target, IMessage message)
     {
         Weapon.Use(this, target, message);
+    }
+
+    public void SwitchWeapon()
+    {
+        var tmp = Weapon;
+        Weapon = SubWeapon;
+        SubWeapon = tmp;
     }
 }
