@@ -708,3 +708,4 @@ MonoBehaviour:
   Actor1: {fileID: 11400000, guid: c32a30aa89e875843be67f0500212406, type: 2}
   Actor2: {fileID: 11400000, guid: 6673159ea217e664294bdd293e482ca7, type: 2}
   Enemy: {fileID: 11400000, guid: 29769e41799331040a688615861ffa7b, type: 2}
+  ItemList: {fileID: 11400000, guid: 921f97957e9d90f40a365d2c1a09b7be, type: 2}
