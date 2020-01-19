@@ -6,16 +6,10 @@ using UnityEngine.UI;
 
 public class EquipButton : MonoBehaviour
 {
-    public enum Slot
-    {
-        MainWeapon,
-        SubWeapon,
-    }
-
     private Text _name;
 
     public int Number;
-    public Slot SlotType;
+    public int SlotId;
 
     void Start()
     {
@@ -25,21 +19,6 @@ public class EquipButton : MonoBehaviour
     private void Update()
     {
         var actor = Repository.Get<Party>().Actors[Number];
-
-        Skill skill;
-
-        switch(SlotType)
-        {
-            case Slot.MainWeapon:
-                skill = actor.Weapon;
-                break;
-            case Slot.SubWeapon:
-                skill = actor.SubWeapon;
-                break;
-            default:
-                return;
-        }
-
-        _name.text = skill.Name;
+        _name.text = actor.Weapon[SlotId].Name;
     }
 }

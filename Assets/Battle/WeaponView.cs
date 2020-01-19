@@ -20,7 +20,7 @@ public class WeaponView : MonoBehaviour
 
     private void Update()
     {
-        var skill = Repository.Get<Party>().Actors[Number].Weapon;
+        var skill = Repository.Get<Party>().Actors[Number].Weapon[0];
         _name.text = skill.Name;
         _power.text = skill.Power.ToString();
     }

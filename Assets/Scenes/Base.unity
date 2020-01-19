@@ -2756,7 +2756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Number: 0
-  SlotType: 0
+  SlotId: 0
 --- !u!1 &1539916597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,7 +3170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Number: 1
-  SlotType: 1
+  SlotId: 1
 --- !u!1 &1762367526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,7 +3329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Number: 1
-  SlotType: 0
+  SlotId: 0
 --- !u!1 &1770632942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3793,4 +3793,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Number: 0
-  SlotType: 1
+  SlotId: 1

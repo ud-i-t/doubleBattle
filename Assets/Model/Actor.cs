@@ -12,11 +12,10 @@ public class Actor : Battler
     public int ST { get; set; }
 
     public IEnumerable<Skill> Skills;
-    public Skill Weapon;
-    public Skill SubWeapon;
+    public Skill[] Weapon = new Skill[2];
     public Skill UseSkill { get; internal set; }
 
-    public bool AllowSwitchWeapon => SubWeapon != null;
+    public bool AllowSwitchWeapon => Weapon[1] != null;
 
     public Actor(MasterActorData masterData)
     {
@@ -29,8 +28,8 @@ public class Actor : Battler
         ST = MaxST;
 
         Skills = _masterData.Skills.Select(x => new Skill(x)).ToList();
-        Weapon = new Skill(_masterData.Weapon);
-        SubWeapon = new Skill(_masterData.SubWeapon);
+        Weapon[0] = new Skill(_masterData.Weapon);
+        Weapon[1] = new Skill(_masterData.SubWeapon);
     }
 
     public void Action(IBattler target, IMessage message)
@@ -40,13 +39,13 @@ public class Actor : Battler
 
     public override void Reaction(IBattler target, IMessage message)
     {
-        Weapon.Use(this, target, message);
+        Weapon[0].Use(this, target, message);
     }
 
     public void SwitchWeapon()
     {
-        var tmp = Weapon;
-        Weapon = SubWeapon;
-        SubWeapon = tmp;
+        var tmp = Weapon[0];
+        Weapon[0] = Weapon[1];
+        Weapon[1] = tmp;
     }
 }

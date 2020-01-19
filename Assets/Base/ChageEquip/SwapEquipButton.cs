@@ -12,8 +12,8 @@ public class SwapEquipButton : MonoBehaviour
 
     public void Execute()
     {
-        Repository.Get<Warehouse>().Weapons.Add(Actor.Weapon);
-        Actor.Weapon = Skill;
+        Repository.Get<Warehouse>().Weapons.Add(Actor.Weapon[SlotID]);
+        Actor.Weapon[SlotID] = Skill;
         
         PostExecute?.Invoke();
     }
