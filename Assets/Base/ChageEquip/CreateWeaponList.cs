@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Model;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,11 @@ public class CreateWeaponList : MonoBehaviour
         {
             GameObject button = Instantiate(ButtonPrefab, transform);
             button.transform.Find("Name").GetComponent<Text>().text = item.Name;
+
+            var script = button.GetComponent<SwapEquipButton>();
+            script.Actor = Repository.Get<Party>().Actors[0];
+            script.Skill = item;
+            script.SlotID = 0;
         }
     }
 }
